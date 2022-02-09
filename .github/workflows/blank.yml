@@ -24,7 +24,7 @@ jobs:
 
       - name: Delete old file scrapy_out.txt
         run: |
-          rm -f scrapy_out.txt
+          rm -f /tmp/scrapy_out.txt
 
       - name: Delete old file rest2.html
         run: |
@@ -36,7 +36,7 @@ jobs:
 
       - name: Run a script to generate rest2.html
         run: |
-          python generate.py < scrapy_out.txt > rest2.html
+          python generate.py < /tmp/scrapy_out.txt > rest2.html
 
       - name: Commit report
         run: |
