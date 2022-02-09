@@ -22,13 +22,13 @@ jobs:
         run: |
           pip install scrapy
 
-      - name: Delete old file scrapy_out.txt
+      - name: Delete old file scrapy_output.txt
         run: |
-          rm -f /home/runner/work/rest-prod-302/rest-prod-302/scrapy_out.txt
+          rm -f /tmp/scrapy_output.txt
 
       - name: Delete old file rest2.html
         run: |
-          rm -f /home/runner/work/rest-prod-302/rest-prod-302/rest2.html
+          rm -f rest2.html
 
       - name: Directory listing
         run: |
@@ -46,7 +46,7 @@ jobs:
 
       - name: Run a script to generate rest2.html
         run: |
-          python generate.py < /home/runner/work/rest-prod-302/rest-prod-302/scrapy_out.txt > /home/runner/work/rest-prod-302/rest-prod-302/rest2.html
+          python generate.py < /tmp/scrapy_output.txt > rest2.html
 
       - name: Commit report
         run: |
