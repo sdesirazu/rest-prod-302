@@ -21,8 +21,17 @@ jobs:
       - name: Run a single-line script
         run: |
           pip install scrapy
+
+      - name: Delete old file scrapy_out.txt
+        run: |
           rm -f scrapy_out.txt
+
+      - name: Delete old file rest2.html
+        run: |
           rm -f rest2.html
+
+      - name: Run a scrapy crawl
+        run: |
           scrapy crawl rest
 
       - name: Run a script to generate rest2.html
