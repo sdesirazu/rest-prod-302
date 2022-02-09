@@ -32,7 +32,12 @@ jobs:
 
       - name: Run a scrapy crawl
         run: |
+          ls /tmp
           scrapy crawl rest
+          ls /tmp
+          ls ~
+          ls
+
 
       - name: Run a script to generate rest2.html
         run: |
