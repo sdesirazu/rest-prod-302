@@ -1,0 +1,36 @@
+name: Spider
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+
+
+jobs:
+  spider:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: 'Set up Python'
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Run a single-line script
+        run: |
+          pip install scrapy
+          rm -f scrapy_out.txt
+          rm -f rest2.html
+          scrapy crawl rest
+
+      - name: Run a script to generate rest2.html
+        run: |
+          python generate.py < scrapy_out.txt > rest2.html
+
+      - name: Commit report
+        run: |
+          git config --global user.name 'sdesirazu'
+          git config --global user.email 'sdesirazu@users.noreply.github.com'
+          git commit -am "Automated report"
+          git push
