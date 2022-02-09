@@ -28,7 +28,7 @@ jobs:
 
       - name: Delete old file rest2.html
         run: |
-          rm -f rest2.html
+          rm -f /home/runner/work/rest-prod-302/rest-prod-302/rest2.html
 
       - name: Directory listing
         run: |
