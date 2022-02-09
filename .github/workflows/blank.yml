@@ -28,7 +28,7 @@ jobs:
 
       - name: Delete old file rest2.html
         run: |
-          rm -f /tmp/rest2.html
+          rm -f rest2.html
 
       - name: Run a scrapy crawl
         run: |
@@ -36,7 +36,7 @@ jobs:
 
       - name: Run a script to generate rest2.html
         run: |
-          python generate.py < /tmp/scrapy_output.txt > /tmp/rest2.html
+          python generate.py < /tmp/scrapy_output.txt > rest2.html
 
       - name: Copy file to S3
         uses: qoqa/action-s3-cp@v1.1
