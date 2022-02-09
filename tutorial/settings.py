@@ -88,4 +88,4 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 LOG_STDOUT = True
-LOG_FILE = '/tmp/scrapy_output.txt'
+LOG_FILE = "/home/runner/work/rest-prod-302/rest-prod-302/scrapy_output.txt"
