@@ -30,14 +30,19 @@ jobs:
         run: |
           rm -f rest2.html
 
-      - name: Run a scrapy crawl
+      - name: Directory listing
         run: |
           ls /tmp
+          ls ~
+          pwd
+          ls
+
+      - name: Run a scrapy crawl
+        run: |
           scrapy crawl rest
           ls /tmp
           ls ~
           ls
-
 
       - name: Run a script to generate rest2.html
         run: |
