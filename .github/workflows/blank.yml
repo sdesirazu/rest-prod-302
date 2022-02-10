@@ -22,14 +22,6 @@ jobs:
         run: |
           pip install scrapy
 
-      - name: Delete old file scrapy_output.txt
-        run: |
-          rm -f /tmp/scrapy_output.txt
-
-      - name: Delete old file rest2.html
-        run: |
-          rm -f rest2.html
-
       - name: Run a scrapy crawl
         run: |
           scrapy crawl rest
