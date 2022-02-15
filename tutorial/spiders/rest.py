@@ -9,6 +9,9 @@ class RestSpider(CrawlSpider):
     allowed_domains = ['rest.com.au']
     start_urls = ['https://rest.com.au/']
     IGNORED_EXTENSIONS.remove('pdf')
+    IGNORED_EXTENSIONS.remove('jpg')
+    IGNORED_EXTENSIONS.remove('jpeg')
+    IGNORED_EXTENSIONS.remove('png')
 
     rules = (
         Rule(LinkExtractor(), callback='parse_item', follow=True),
